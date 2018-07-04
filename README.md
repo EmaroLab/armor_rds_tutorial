@@ -187,7 +187,7 @@ You can now inspect the saved ontology with Protégé. If you have doubts about 
 
 There exist also a legacy GUI in ARMOR to visualize an ontology online, mainly designed for debugging purposes. Its graphic may be glitchy, but the data shown is reliable. We are not going to cover it in the tutorial, but you can check how to enable it in the documentation. 
 
-### The self-tool and armor_py_api
+### The self-test tool and armor_py_api
 
 Now, it is time to go back to the self-test tool. Open it in the RDS IDE and look at the commands, then let's check together their implementation in ```armor_py_api```. This is a good example of how to call ARMOR from inside you code. Note that since we are communicating with service calls, calling ARMOR from C++ or Java nodes is fundamentally the same. An example:
 
