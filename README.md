@@ -237,7 +237,7 @@ rosservice call /armor_interface_srv "armor_request:
   args: ['isGoingTo', 'robot1']"  
 ```
 
-This whill return all the values for that property. In this case we have to make sure ther is always one. Note that since query operations do not modify the ontology, they are allowed even by clients with different ids.
+This whill return all the values for that property. In this case we have to make sure there is always one. Note that since query operations do not modify the ontology, they are allowed even by clients with different ids.
 
 We can move the second robot too. Let's try to push them in the same room.
 
