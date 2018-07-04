@@ -106,7 +106,7 @@ Have a look at the ARMOR github [page](https://github.com/EmaroLab/armor) and gl
 
 ## Tutorial
 
-Now that you have an idea of what is an ontology and how it can help you, let's delve into the tutorial. This demo will follow a top down approach: first we will check that our installation was successful, then we will try to communicate with ARMOR from terminal, and later we will go and check in the self test utility which commands are called and to which ARMOR messages and commands they corresponds. Once the basis is layed down, we will have a look at a concrete example with two turtlebot and three ontologies interacting together.
+Now that you have an idea of what is an ontology and how it can help you, let's delve into the tutorial. This demo will follow a top down approach: first we will check that our installation was successful, then we will try to communicate with ARMOR from terminal, and later we will go and check in the self test utility which commands are called and to which ARMOR messages and commands they correspond. Once the basis is layed down, we will have a look at a concrete example with two turtlebot and three ontologies interacting together.
 
 Please note that this tutorial was meant for RDS so there may be some specific jargon involved, but everything should work the same on a regular ROS installation.
 
