@@ -285,7 +285,7 @@ This command modifies a data property. You may have already seen them in Protég
     + Avoid inconsistencies and re-reasoning as an event trigger/action-reasoning loop. Try as much as you can to control the logic of the ontology and poll specific entities (i.e. classes, individuals, properties).
     
 ## That's it!
-We know this demo may have been way too simple for you to grasp the full potential of logic reasoning if you are not acquainted too. Still, we hope to have picked your interest and that our software can help you explore this field.
+We know this demo may have been way too simple for you to grasp the full potential of logic reasoning if you are not acquainted too. Still, we hope to have piqued your interest and that our software can help you explore this field.
 
 **Thank you for attention!**
 
