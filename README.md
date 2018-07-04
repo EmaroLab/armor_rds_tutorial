@@ -48,7 +48,7 @@ In RDS though, you will have to install it from source:
     git clone https://github.com/EmaroLab/armor_py_api
 ```
 
-+ The very last step is cloning the demo repository. This demo will use ontological databases to work with two turtlebots in a domestic envoronment simulated in Gazebo. If you are working in RDS, remember to move the ```turtlebot3_simulations``` folder inside the ```simulation_ws``` folder. Else, remember to launch gazebo with the ```turtlebot3_house.launch``` before running the tutorial code!
++ The very last step is cloning the demo repository. This demo will use ontological databases to work with two turtlebots in a domestic environment simulated in Gazebo. If you are working in RDS, remember to move the ```turtlebot3_simulations``` folder inside the ```simulation_ws``` folder. Else, remember to launch gazebo with the ```turtlebot3_house.launch``` before running the tutorial code!
 
 ```sh
     git clone https://github.com/EmaroLab/armor_rds_tutorial
