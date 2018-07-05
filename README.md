@@ -35,7 +35,7 @@ AMOR allows performing most of those operations in only one line of code, and it
 The above AMOR repository contains the [JAR release](https://github.com/EmaroLab/multi_ontology_reference/releases) library.
 Of course, you can use this library all the times you can interface your programs with a JVM (this is what we have done for a long time!). 
 
-For a simple installation of the AMOR core, clone its repostiroy on your workspace: 
+For a simple installation of the AMOR core, clone its repository on your workspace: 
 
 ```sh
     git clone https://github.com/EmaroLab/multi_ontology_reference
@@ -58,7 +58,7 @@ Then, since specified as a compile dependence in its [Gradle building set-up](ht
     git clone https://github.com/EmaroLab/armor_msgs
 ```
 
-#### 5. ARMOR testers
+#### 5. ARMOR python API
 [armor_py_api](https://github.com/EmaroLab/armor_py_api) is a WIP python utility that allows you to perform calls to ARMOR without the need to fill in the messages, but just calling some very intuitive functions to query and modify a given ontology. We will use some parts of this package as an example in the tutorial. Also, it offers a nice self-test script to check if the installation of the framework was successful. Clone this repo in your workspace too:
 
 ```sh
@@ -83,19 +83,19 @@ Now that we have everything ready, build your workspace!
     catkin_make
 ```
 
- Two little notes before moving on:
+Two little notes before moving on:
 
 + Rosjava nodes are a bit tedious to launch with both ```rosrun``` and ```roslaunch``` since the syntax required is pretty verbose. To simplify the process for ARMOR, run the following commands. They will create an executable that can be launched in a much easier way. Usually, this must be done only the first time after build, but in RDS you **must** do it every time you boot a new session.
 
 ```sh
-    roscd armor (??)
+    roscd armor
     ./gradlew deployApp
 ```
 
 + In the latest version of RDS, please remember also to source your workspace in every terminal you open.
 
 ```sh
-    source  ~/catkin_ws/devel/setup.bash (??)
+    source  ~/catkin_ws/devel/setup.bash
 ```
 
 ## What are Ontologies?
@@ -103,7 +103,7 @@ Now that we have everything ready, build your workspace!
 Ontology is a term borrowed from Greek philosophy, used to describe *the philosophical study of the nature of being, becoming, existence, or reality, as well as the basic categories of being and their relations*. In computer science and information technology, we usually refer to a database as an ontology when it allows storing information about classes of objects, subclasses, instances of said classes and hierarchical properties among them. 
 
 We are going to focus here to the **OWL standard** (an *XML schema*) which supports a broad set of *reasoning* algorithms that exploit the [Description Logic (DL)](https://en.wikipedia.org/wiki/Description_logic) formalism to infer the state of the data in our ontology.
-Remarkably, DL is not only used for reasoning, but it is also a state-of-art formalism that supports natural language. Therefore, it is suitable for Human-Robot Interaction and developing purposes, since the structured data inferred by the reasoner is completely accessible.
+Remarkably, DL is not only used for reasoning, but it is also a state-of-art formalism close to natural language. Therefore, it is suitable for Human-Robot Interaction and developing purposes, since the structured data inferred by the reasoner is completely accessible.
 
 ### Reasoning
 
@@ -111,7 +111,7 @@ Let's assume we define a very simple ontology where there exist a class *Fruit*,
 
 + What happens if I add to the ontology an object with some seeds? It will automatically be classified as a `Fruit`, even if that was not explicitly stated. This is the result of the ***instance checking*** perfomed by the reasoner.
 
-+ What if we do the same, but we explicitly states that the object we add is not a fruit (i.e., it is *disjoint* from the class `Fruit`)? Then this event throws the ontology in an *inconsistent* state, since we define in the ontology that only `Fruit` can be seeds. This is called ***consistence checking***. 
++ What if we do the same, but we explicitly states that the object we add is not a fruit (i.e., it is *disjoint* from the class `Fruit`)? Then this event throws the ontology in an *inconsistent* state, since we define in the ontology that only `Fruit` must have seeds. This is called ***consistence checking***. 
 
 Both these checks are performed by the OWL **reasoner**: a little piece of software that is programmed to interface with an OWL ontology and infers new knowledge. There are [several reasoners](http://owl.cs.manchester.ac.uk/tools/list-of-reasoners/) available. But here we are going to use only [Pellet](https://github.com/stardog-union/pellet), which supports also the [Semantic Web Rule Language (SWRL)](https://www.w3.org/Submission/SWRL/).
 
@@ -119,7 +119,7 @@ Both these checks are performed by the OWL **reasoner**: a little piece of softw
 
 Writing an ontology in a text editor is technically possible, but extremely tedious and error-prone. As a consequence, the logical skeleton of an ontology is usually implemented and inspected using a dedicated graphical tool. The most common, and the one we are using in this demo, is the [Protégé](https://protege.stanford.edu/) editor. 
 You can download it for free from the website (or use online) and play with it; it is very intuitive and simplifies a lot the process of designing OWL structures and reasoning paradigms. 
-For a further understanding of OWL capabilities, use such an editor to follow [this popular tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf).
+If you want to practice with the OWL standard, you can refer to [this popular tutorial](http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf).
 
 ### Ontologies in robotics
 
@@ -131,15 +131,15 @@ Have a look at the ARMOR Github [page](https://github.com/EmaroLab/armor), and g
 For instance, so far we used it to perform:
  + task planning to manipulate cluttered objects,
  + task planning to manipulate articulated objects,
- + spatial perception and reasoning, and
+ + spatial perception and reasoning,
  + natural human supervisions.
 
 ## ARMOR Demo
 
-Now that you have an idea of what ontologies are, and how they can help you, let's delve into the tutorial. This demo will follow a top-down approach: 
- + first we will check that our installation was successful, 
- + then we will try to communicate with ARMOR from a terminal, and  
- + later we will go and check in the self-test utility which commands are called and to which ARMOR messages and commands they correspond. Once the basis is laid down, we will have a look at a concrete example with two turtlebots and three ontologies interacting together.
+Now that you have an idea of what ontologies are, and how they can help you, let's delve into the tutorial. This demo will follow a top-down approach, we will: 
+ 1. check that our installation was successful, 
+ 2. try to communicate with ARMOR from a terminal, and  
+ 3. go and check in the self-test utility which commands are called and to which ARMOR messages and commands they correspond. Once the basis is laid down, we will have a look at a concrete example with two turtlebots and three ontologies interacting together.
 
 Please note that this tutorial was meant for RDS so there may be some specific jargon involved, but everything should work the same on a regular ROS installation as well.
 
@@ -162,7 +162,7 @@ If you get an error here, most pobably you forgot to source the workspace. Else,
 Before going on, take your time to inspect the test ontologies in Protégé. You can run Protégé from terminal and it will appear in the RDS graphical tools view.
 
 ```sh
-~/catkin_ws/src/armor_rds_tutorial/Protege-5.2.0/run.sh ??
+~/catkin_ws/src/armor_rds_tutorial/Protege-5.2.0/run.sh
 ```
 
 
@@ -170,7 +170,7 @@ Before going on, take your time to inspect the test ontologies in Protégé. You
 
 Great! Now let's user ARMOR services manually via ```rosservice call```, through which you can use one of the requests listed at this [page](https://github.com/EmaroLab/armor/blob/master/commands.md).
 
-All the requests follows the same messge that can be send also into an array for process multiple requests as a queue. In particular the [message](??) has the following fields
+All the requests follows the same messge that can be send also into an array for process multiple requests as a queue. In particular the [message](https://github.com/EmaroLab/armor_msgs) has the following fields:
  1. the ```client_name```, which is used by the service to identify different callers, 
  2. the ```reference_name```, indicating the operation’s target ontology, and 
  3. the ```command```, to execute, i.e., add, remove, replace, query,load, mount, etc. Each of those commands may be further reﬁned by: (3.1) the ```primary_command_spec``` and (3.2) ```secondary_command_spec```, which augment the command label, e.g., add(individual,class) or remove(individual,property), etc.).
@@ -213,7 +213,7 @@ rosservice call /armor_interface_srv "armor_request:
   args: ['']"  
 ```
 
-+ and save the asserted (made by you) and inferted (made by the reasoner) axioms in an ontology file
++ and save the asserted (instantiated by you) and inferred (by the reasoner) axioms in an ontology file:
 
 ```sh
 rosservice call /armor_interface_srv "armor_request:
@@ -231,7 +231,7 @@ There exist also a legacy GUI in ARMOR to visualize an ontology online, mainly d
 
 ### The self-test tool and armor_py_api
 
-Now, it is time to go back to the self-test tool. Open it in the RDS IDE and look at the commands, then let's check together their implementation in [```armor_py_api```](??)). This is a good example of how to call ARMOR from inside you code. Note that since we are communicating with service calls, calling ARMOR from C++ or Java nodes is fundamentally the same. An example:
+Now, it is time to go back to the self-test tool. Open it in the RDS IDE and look at the commands, then let's check together their implementation in [```armor_py_api```](https://github.com/EmaroLab/armor_py_api/tree/master/scripts/armor_api)). This is a good example of how to call ARMOR from inside you code. Note that since we are communicating with service calls, calling ARMOR from C++ or Java nodes is fundamentally the same. An example:
 
 ```python
 res = client.call('ADD', 'IND', 'CLASS', [ind_name, class_name])
@@ -251,12 +251,7 @@ Let's start by opening the RDS Gazebo view and launching ```turtlebot3_house.lau
 roslaunch armor_rds_tutorial rds_tutorial.launch
 ```
 
-The second step consists in opening Protégé and checking out the two ontologies to familiarize with the classes we are going to poll later. Open the [house ontology](??) and pay particular attention to the SWRL tab (you can add it from the windows menu of Protégé). It shows the logic rules are defined as conjunctions-implication statements that the reasoner evaluates (i.e., * **if** this, and this, and this, ..., **then** that, and that, and that, ...*). 
-In particular for this tutorial we rely on the SWRL:
-
-```
-??
-```
+The second step consists in opening Protégé and checking out the two ontologies to familiarize with the classes we are going to poll later. Open the [house ontology]() and pay particular attention to the SWRL tab (if it is not opened already, you can add it from the windows->tabs menu of Protégé). It shows the logic rules are defined as conjunctions-implication statements that the reasoner evaluates (i.e., ***if** this, and this, and this, ..., **then** that, and that, and that, ...*). 
 
 Note that not all reasoners support SWRL, and their use might affect computation time.  Also, they cannot be used to generate a new symbol (due to monotonic reasoning constraints of OWL); nevertheless they can classify instanciated symbols (e.g., ```T1``` and ```R3```), and assign properties between them every time the reasoning outcomes are updated.
 
@@ -274,7 +269,7 @@ rosservice call /armor_interface_srv "armor_request:
   args: ['isGoingTo', 'robot1', 'bedroom1']"  
 ```
 
-Pay attention to the ```client_name``` field. Since we specified a name, the node requesting ARMOR services is  ***mounted***, and it is currently the only one allowed to modify the otnology specified in the ```reference_name``` field of the message. If another client wants to manipulate or query such ontology, it will have to use the ```client_name```  identifier (i.e., ```robot1_reference```). This flexible design is convenient when multiple nodes have to act together, but others must be locked out (i.e., data acquisition phase).
+Pay attention to the ```client_name``` field. Notice that in the script we are loading the reference as ***mounted***, this means that the only client name allowed to modify the ontology, is the one which issued the load command. If another client wants to manipulate or query such ontology, it will have to use the ```client_name```  identifier (i.e., ```robot1_reference```). Else, the initial client should unmount itself before. This flexible design is convenient when multiple nodes have to act together, but others must be locked out (i.e., data acquisition phase).
 
 Now, let's keep track of its position by performing our first query to the ontology:
 
@@ -288,11 +283,11 @@ rosservice call /armor_interface_srv "armor_request:
   args: ['isGoingTo', 'robot1']"  
 ```
 
-A query will return all the values for that property. In this case, we have to make sure there is always one (i.e., the robot can, or wants to go, only in one room). 
+A query will return all the values for that property. In this case, we have to make sure there is always one (i.e., the robot can, or wants to go, only in one room). Also pay attention that since query operations do not modify the ontology, they are allowed even by clients with different ```client_name```. 
 
-Note that since query operations do not modify the ontology, they are allowed even by clients with different ```client_name```. OWL API is made in such a way that during reasoning the structures used to solve a query are generated. Therefore this process can be time-consuming, and during it, no manipulations or queries are allowed, i.e., the reason is a blocking function.  After the reasoner completes, the queries are fast to be solved but, since we manipulate ontologies with rates depending from sensors, update the reasoning beliefs at every new data could be unfeasible. In this case, you can adjust the manipulation and reasoning buffers to update the reasoner as soon as new axioms are available, but flush all the commands only when desired; or you can not buffering manipulation but ask for reasoning updates only when required (refer to the ARMOR repository for more documentation about buffering, and others, service parameters).
+**Warning!** Reasoning on OWL ontologies is a complex, time consuming, **blocking** function, i.e., it will prevent you from getting an ARMOR response.  After the reasoner completes, queries are fast to be solved. On the contrary, reason every time we update the knowledge base with data incoming from the sensors may be computationally unfeasable. In this case, we advise to use buffered reasoning and manually update the resoner with an ARMOR call. You can refer to the ARMOR repository for more documentation about buffering, and others, service parameters.
 
-Furthermore, we can move the second robot too, but the tutorial assumes that (for avoiding collisions) only one robot can be in a room at a certain time. Let's try to push them in the same room, and see how the ontology is used to manage such a situation.
+Furthermore, we can move the second robot too, but the tutorial assumes that (for avoiding collisions) only one robot can be in a room at a certain time, unless the room in question is the living room. Let's try to push them in the same room, and see how the ontology is used to manage such a situation.
 
 Give a goal room to the  ```robot1```
 
@@ -317,7 +312,7 @@ rosservice call /armor_interface_srv "armor_request:
   args: ['isGoingTo', 'robot2', 'bedroom1']"  
 ```
 
-Ouch! To reach their target both robots should be in the same room, and this is inferred by the reasoner in the house ontology.  Therefore, one of the robot stopped, and it will move in a free room (i.e., the living room). Don't worry. The robot will go back to its goal?? destination soon. 
+Ouch! To reach their target both robots should be in the same room, and this is inferred by the reasoner in the house ontology.  Therefore, one of the robot stopped, and it will move in a larger room (i.e., the living room).
 
 In the meanwhile, pay attention to some new command:
 
@@ -354,6 +349,7 @@ More details at:
 - More to come!
 
 ## Contacts
-For comments, discussions or support refer to online documentation, github features, or contact us at:
+For comments or support please refer to online documentation and/or open an issue.
+
  - [alessio.capitanelli@dibris.unige.it](mailto:alessio.capitanelli@dibris.unige.it),
  - [luca.buoncompagni@edu.unige.it](mailto:luca.buoncompagni@edu.unige.it).
