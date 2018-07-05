@@ -1,8 +1,8 @@
 # ARMOR RDS Tutorial
 
-This repository contains the code used in our demo for the tutorial titled *Semantic Knowledge Representation in ROS: using ARMOR for Ontology Manipulation and Queries* presented at the [ROS Developer Conference 2018](http://www.theconstructsim.com/ros-developers-online-conference-2018-rdc-worldwide/) which took place on July 8th. A full set-up [instance](??) of the [ROS Developer Studio (RDS)](http://www.theconstructsim.com/rds-ros-development-studio/) was shared with the participants on that date. This repository is geared towards both conference attendees and other robotics enthusiasts that want to have a second look a the demo material outside of the RDS environment.
+This repository contains the code used in our demo for the tutorial titled *Semantic Knowledge Representation in ROS: using ARMOR for Ontology Manipulation and Queries* presented at the [ROS Developer Conference 2018](http://www.theconstructsim.com/ros-developers-online-conference-2018-rdc-worldwide/) which took place on July 8th. A full set-up instance of the [ROS Developer Studio (RDS)](http://www.theconstructsim.com/rds-ros-development-studio/) was shared with the participants on that date. This repository is geared towards both conference attendees and other robotics enthusiasts that want to have a second look a the demo material outside of the RDS environment.
 
-**ARMOR** - *a ROS Multi-Ontology Reference* is a software that allows developers to access and modify ontological databases in robotic applications easily. If you do not know what an ontology is or why you should care for robotic applications, don't worry! We provided motivations in our tutorial [abstract](??), as well as a short primer later in these notes. 
+**ARMOR** - *a ROS Multi-Ontology Reference* is a software that allows developers to access and modify ontological databases in robotic applications easily. If you do not know what an ontology is or why you should care for robotic applications, don't worry! We provided motivations in our tutorial abstract which you can find in this repository. 
 For now, let's focus on the installation process.
 
 ## Installation
@@ -320,7 +320,7 @@ In the meanwhile, pay attention to some new command:
 res = self._client.call('ADD', 'DATAPROP', 'IND', [dataprop_name, ind_name, "BOOLEAN", "true"])
 ```
 
-This command modifies a data property. You may have already seen them in Protégé. They are similar to regular properties, but instead of linking to another individual, they link an individual and a data value, such as an integer or a boolean. ??
+This command modifies a data property. You may have already seen them in Protégé. They are similar to regular properties, but instead of linking to another individual, they link an individual and a data value, such as an integer or a boolean.
 
 ## Tips and remarks!
 
