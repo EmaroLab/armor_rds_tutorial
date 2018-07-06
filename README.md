@@ -145,9 +145,10 @@ Please note that this tutorial was meant for RDS so there may be some specific j
 
 ### Running the self-test
 
-Let's check everything works! First of all, try to launch ARMOR manually:
+Let's check everything works! First of all, try to launch ARMOR manually. Please check that you are running a ```roscore```, as Rosjava nodes do not check for the core to be running before start (i.e. they will run, but obviously not work):
 
 ```sh
+roscore
 rosrun armor execute it.emarolab.armor.ARMORMainService
 ```
 
@@ -162,7 +163,7 @@ If you get an error here, most pobably you forgot to source the workspace. Else,
 Before going on, take your time to inspect the test ontologies in Protégé. You can run Protégé from terminal and it will appear in the RDS graphical tools view.
 
 ```sh
-~/catkin_ws/src/armor_rds_tutorial/Protege-5.2.0/run.sh
+/home/user/catkin_ws/src/armor_rds_tutorial/Protege-5.2.0/run.sh
 ```
 
 
@@ -182,11 +183,11 @@ Make sure ARMOR is still running, then:
 ```sh
 rosservice call /armor_interface_srv "armor_request:
   client_name: 'terminal'
-  reference_name: 'ref'
+  reference_name: 'ref1'
   command: 'LOAD'
   primary_command_spec: 'FILE'
   secondary_command_spec: ''
-  args: ['/home/user/catkin_ws/src/armor_py_apy/test/test.owl', 'http://www.semanticweb.org/emarolab/pyarmor/test', 'false', 'PELLET', 'true']"  
+  args: ['/home/user/catkin_ws/src/armor_py_api/test/test.owl', 'http://www.semanticweb.org/emarolab/pyarmor/test', 'false', 'PELLET', 'true']"  
 ```
 
 + add an individual of individuals:
@@ -194,7 +195,7 @@ rosservice call /armor_interface_srv "armor_request:
 ```sh
 rosservice call /armor_interface_srv "armor_request:
   client_name: 'terminal'
-  reference_name: 'ref'
+  reference_name: 'ref1'
   command: 'ADD'
   primary_command_spec: 'IND'
   secondary_command_spec: ''
@@ -206,7 +207,7 @@ rosservice call /armor_interface_srv "armor_request:
 ```sh
 rosservice call /armor_interface_srv "armor_request:
   client_name: 'terminal'
-  reference_name: 'ref'
+  reference_name: 'ref1'
   command: 'REASON'
   primary_command_spec: ''
   secondary_command_spec: ''
@@ -218,7 +219,7 @@ rosservice call /armor_interface_srv "armor_request:
 ```sh
 rosservice call /armor_interface_srv "armor_request:
   client_name: 'terminal'
-  reference_name: 'ref'
+  reference_name: 'ref1'
   command: 'SAVE'
   primary_command_spec: 'INFERENCE'
   secondary_command_spec: ''
