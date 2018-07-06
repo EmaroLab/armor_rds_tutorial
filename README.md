@@ -296,10 +296,10 @@ Give a goal room to the  ```robot1```
 rosservice call /armor_interface_srv "armor_request:
   client_name: 'robot1'
   reference_name: 'robot1_reference'
-  command: 'ADD'
+  command: 'REPLACE'
   primary_command_spec: 'OBJECTPROP'
   secondary_command_spec: 'IND'
-  args: ['isGoingTo', 'robot1', 'kitchen']"  
+  args: ['isGoingTo', 'robot1', 'kitchen', 'bathroom2']"  
 ```
 and a goal room to the  ```robot2```
 
