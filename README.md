@@ -299,7 +299,7 @@ rosservice call /armor_interface_srv "armor_request:
   command: 'REPLACE'
   primary_command_spec: 'OBJECTPROP'
   secondary_command_spec: 'IND'
-  args: ['isGoingTo', 'robot1', 'kitchen', 'bathroom2']"  
+  args: ['isGoingTo', 'robot1', 'bedroom1', 'bathroom2']"  
 ```
 and a goal room to the  ```robot2```
 
