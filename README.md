@@ -290,19 +290,6 @@ A query will return all the values for that property. In this case, we have to m
 
 Furthermore, we can move the second robot too, but the tutorial assumes that (for avoiding collisions) only one robot can be in a room at a certain time, unless the room in question is the living room. Let's try to push them in the same room, and see how the ontology is used to manage such a situation.
 
-Give a goal room to the  ```robot1```
-
-```sh
-rosservice call /armor_interface_srv "armor_request:
-  client_name: 'robot1'
-  reference_name: 'robot1_reference'
-  command: 'REPLACE'
-  primary_command_spec: 'OBJECTPROP'
-  secondary_command_spec: 'IND'
-  args: ['isGoingTo', 'robot1', 'bathroom2', 'bedroom1']"  
-```
-and a goal room to the  ```robot2```
-
 ```sh
 rosservice call /armor_interface_srv "armor_request:
   client_name: 'robot2'
