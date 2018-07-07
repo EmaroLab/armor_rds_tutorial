@@ -1,0 +1,433 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://github.com/EmaroLab/global-ontology#"
+     xml:base="http://github.com/EmaroLab/global-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:untitled-ontology-3="http://github.com/EmaroLab/global-ontology#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://github.com/EmaroLab/global-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#agentProperty -->
+
+    <owl:ObjectProperty rdf:about="http://github.com/EmaroLab/global-ontology#agentProperty"/>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#isGoingTo -->
+
+    <owl:ObjectProperty rdf:about="http://github.com/EmaroLab/global-ontology#isGoingTo">
+        <rdfs:subPropertyOf rdf:resource="http://github.com/EmaroLab/global-ontology#agentProperty"/>
+        <rdfs:domain rdf:resource="http://github.com/EmaroLab/global-ontology#PhysicalAgent"/>
+        <rdfs:range rdf:resource="http://github.com/EmaroLab/global-ontology#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#isIn -->
+
+    <owl:ObjectProperty rdf:about="http://github.com/EmaroLab/global-ontology#isIn">
+        <rdfs:subPropertyOf rdf:resource="http://github.com/EmaroLab/global-ontology#agentProperty"/>
+        <rdfs:domain rdf:resource="http://github.com/EmaroLab/global-ontology#PhysicalAgent"/>
+        <rdfs:range rdf:resource="http://github.com/EmaroLab/global-ontology#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#Bathroom -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#Bathroom">
+        <rdfs:subClassOf rdf:resource="http://github.com/EmaroLab/global-ontology#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#Bedroom -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#Bedroom">
+        <rdfs:subClassOf rdf:resource="http://github.com/EmaroLab/global-ontology#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#Corridor -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#Corridor">
+        <rdfs:subClassOf rdf:resource="http://github.com/EmaroLab/global-ontology#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#CrowdedLocation -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#CrowdedLocation">
+        <rdfs:subClassOf rdf:resource="http://github.com/EmaroLab/global-ontology#Events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#Events -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#Events"/>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#Human -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#Human">
+        <rdfs:subClassOf rdf:resource="http://github.com/EmaroLab/global-ontology#PhysicalAgent"/>
+        <owl:disjointWith rdf:resource="http://github.com/EmaroLab/global-ontology#Robot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#Kitchen -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#Kitchen">
+        <rdfs:subClassOf rdf:resource="http://github.com/EmaroLab/global-ontology#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#LivingRoom -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#LivingRoom">
+        <rdfs:subClassOf rdf:resource="http://github.com/EmaroLab/global-ontology#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#Location -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#Location">
+        <owl:disjointWith rdf:resource="http://github.com/EmaroLab/global-ontology#PhysicalAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#PhysicalAgent -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#PhysicalAgent"/>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#Robot -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#Robot">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://github.com/EmaroLab/global-ontology#PhysicalAgent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://github.com/EmaroLab/global-ontology#isIn"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://github.com/EmaroLab/global-ontology#Location"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://github.com/EmaroLab/global-ontology#isGoingTo"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://github.com/EmaroLab/global-ontology#Location"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#Room -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#Room">
+        <rdfs:subClassOf rdf:resource="http://github.com/EmaroLab/global-ontology#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#Triggered -->
+
+    <owl:Class rdf:about="http://github.com/EmaroLab/global-ontology#Triggered">
+        <rdfs:subClassOf rdf:resource="http://github.com/EmaroLab/global-ontology#Events"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#bathroom1 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/global-ontology#bathroom1">
+        <rdf:type rdf:resource="http://github.com/EmaroLab/global-ontology#Bathroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#bathroom2 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/global-ontology#bathroom2">
+        <rdf:type rdf:resource="http://github.com/EmaroLab/global-ontology#Bathroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#bedroom1 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/global-ontology#bedroom1">
+        <rdf:type rdf:resource="http://github.com/EmaroLab/global-ontology#Bedroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#bedroom2 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/global-ontology#bedroom2">
+        <rdf:type rdf:resource="http://github.com/EmaroLab/global-ontology#Bedroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#corridor -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/global-ontology#corridor">
+        <rdf:type rdf:resource="http://github.com/EmaroLab/global-ontology#Corridor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#kitchen -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/global-ontology#kitchen">
+        <rdf:type rdf:resource="http://github.com/EmaroLab/global-ontology#Kitchen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#living_room -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/global-ontology#living_room">
+        <rdf:type rdf:resource="http://github.com/EmaroLab/global-ontology#LivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#crowdedRoomEvent-001 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/global-ontology#crowdedRoomEvent-001">
+        <rdf:type rdf:resource="http://github.com/EmaroLab/global-ontology#CrowdedLocation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#robot1 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/global-ontology#robot1">
+        <rdf:type rdf:resource="http://github.com/EmaroLab/global-ontology#Robot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/global-ontology#robot2 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/global-ontology#robot2">
+        <rdf:type rdf:resource="http://github.com/EmaroLab/global-ontology#Robot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://github.com/EmaroLab/global-ontology#Bathroom"/>
+            <rdf:Description rdf:about="http://github.com/EmaroLab/global-ontology#Bedroom"/>
+            <rdf:Description rdf:about="http://github.com/EmaroLab/global-ontology#Kitchen"/>
+            <rdf:Description rdf:about="http://github.com/EmaroLab/global-ontology#LivingRoom"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://github.com/EmaroLab/global-ontology#robot1"/>
+            <rdf:Description rdf:about="http://github.com/EmaroLab/global-ontology#robot2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://github.com/EmaroLab/global-ontology#R1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://github.com/EmaroLab/global-ontology#R2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://github.com/EmaroLab/global-ontology#L">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TriggerCrowdedLocationEvent</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://github.com/EmaroLab/global-ontology#Robot"/>
+                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/global-ontology#R1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://github.com/EmaroLab/global-ontology#Robot"/>
+                                <swrl:argument1 rdf:resource="http://github.com/EmaroLab/global-ontology#R2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://github.com/EmaroLab/global-ontology#Location"/>
+                                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/global-ontology#L"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://github.com/EmaroLab/global-ontology#isIn"/>
+                                                <swrl:argument1 rdf:resource="http://github.com/EmaroLab/global-ontology#R1"/>
+                                                <swrl:argument2 rdf:resource="http://github.com/EmaroLab/global-ontology#L"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://github.com/EmaroLab/global-ontology#isIn"/>
+                                                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/global-ontology#R2"/>
+                                                        <swrl:argument2 rdf:resource="http://github.com/EmaroLab/global-ontology#L"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                                <swrl:argument1 rdf:resource="http://github.com/EmaroLab/global-ontology#R1"/>
+                                                                <swrl:argument2 rdf:resource="http://github.com/EmaroLab/global-ontology#R2"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://github.com/EmaroLab/global-ontology#Triggered"/>
+                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/global-ontology#crowdedRoomEvent-001"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

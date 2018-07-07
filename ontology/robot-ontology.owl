@@ -1,0 +1,535 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://github.com/EmaroLab/robot-ontology#"
+     xml:base="http://github.com/EmaroLab/robot-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://github.com/EmaroLab/robot-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#isConnectedTo -->
+
+    <owl:ObjectProperty rdf:about="http://github.com/EmaroLab/robot-ontology#isConnectedTo">
+        <rdfs:subPropertyOf rdf:resource="http://github.com/EmaroLab/robot-ontology#locationProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#locationProperty -->
+
+    <owl:ObjectProperty rdf:about="http://github.com/EmaroLab/robot-ontology#locationProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#agentProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#agentProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isGoingTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isGoingTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#agentProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#PhysicalAgent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#agentProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#PhysicalAgent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#agentDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://github.com/EmaroLab/robot-ontology#agentDataProperty"/>
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#isRobotMoving -->
+
+    <owl:DatatypeProperty rdf:about="http://github.com/EmaroLab/robot-ontology#isRobotMoving">
+        <rdfs:subPropertyOf rdf:resource="http://github.com/EmaroLab/robot-ontology#agentDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Robot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bathroom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bathroom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bedroom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bedroom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Corridor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Corridor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Human -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Human">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#PhysicalAgent"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Robot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Kitchen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Kitchen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#LivingRoom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#LivingRoom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Room"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#PhysicalAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#PhysicalAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#PhysicalAgent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Robot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Robot">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#PhysicalAgent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isIn"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isGoingTo"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Room -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Room">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#bathroom1 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/robot-ontology#bathroom1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bathroom"/>
+        <isConnectedTo rdf:resource="http://github.com/EmaroLab/robot-ontology#bedroom1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#bathroom2 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/robot-ontology#bathroom2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bathroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#bedroom1 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/robot-ontology#bedroom1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bedroom"/>
+        <isConnectedTo rdf:resource="http://github.com/EmaroLab/robot-ontology#living_room"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#bedroom2 -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/robot-ontology#bedroom2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bedroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#corridor -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/robot-ontology#corridor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Corridor"/>
+        <isConnectedTo rdf:resource="http://github.com/EmaroLab/robot-ontology#kitchen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#kitchen -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/robot-ontology#kitchen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Kitchen"/>
+        <isConnectedTo rdf:resource="http://github.com/EmaroLab/robot-ontology#bathroom2"/>
+        <isConnectedTo rdf:resource="http://github.com/EmaroLab/robot-ontology#bedroom2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://github.com/EmaroLab/robot-ontology#living_room -->
+
+    <owl:NamedIndividual rdf:about="http://github.com/EmaroLab/robot-ontology#living_room">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#LivingRoom"/>
+        <isConnectedTo rdf:resource="http://github.com/EmaroLab/robot-ontology#corridor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bathroom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bedroom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Kitchen"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#LivingRoom"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://github.com/EmaroLab/robot-ontology#R">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://github.com/EmaroLab/robot-ontology#H">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://github.com/EmaroLab/robot-ontology#B">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://github.com/EmaroLab/robot-ontology#C">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://github.com/EmaroLab/robot-ontology#S">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://github.com/EmaroLab/robot-ontology#G">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A robot cannot be in a bathroom together with a human</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">privacyRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Robot"/>
+                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#R"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Human"/>
+                                <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#H"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Bathroom"/>
+                                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#B"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Corridor"/>
+                                                <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#C"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isIn"/>
+                                                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#R"/>
+                                                        <swrl:argument2 rdf:resource="http://github.com/EmaroLab/robot-ontology#B"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isIn"/>
+                                                                <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#H"/>
+                                                                <swrl:argument2 rdf:resource="http://github.com/EmaroLab/robot-ontology#B"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isGoingTo"/>
+                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#R"/>
+                        <swrl:argument2 rdf:resource="http://github.com/EmaroLab/robot-ontology#C"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To move to a goal location, a robot must ne in location connected to the goal. Else, raise expection.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">navigationRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Robot"/>
+                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#R"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+                                <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#S"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+                                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#G"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#Location"/>
+                                                <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#C"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isIn"/>
+                                                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#R"/>
+                                                        <swrl:argument2 rdf:resource="http://github.com/EmaroLab/robot-ontology#S"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isGoingTo"/>
+                                                                <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#R"/>
+                                                                <swrl:argument2 rdf:resource="http://github.com/EmaroLab/robot-ontology#G"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/alessio/ontologies/2018/5/untitled-ontology-3#isGoingTo"/>
+                        <swrl:argument1 rdf:resource="http://github.com/EmaroLab/robot-ontology#R"/>
+                        <swrl:argument2 rdf:resource="http://github.com/EmaroLab/robot-ontology#C"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

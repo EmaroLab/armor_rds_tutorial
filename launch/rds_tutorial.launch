@@ -1,0 +1,14 @@
+<launch>
+  <node pkg="armor" type="execute" name="armor_service" args="it.emarolab.armor.ARMORMainService" />
+  <include file="$(find armor_rds_tutorial)/launch/gazebo_multirobot.launch"/>
+  
+  <node pkg="armor_rds_tutorial" type="control.py" name="control" ns="robot1" args="robot1" output="screen"/> 
+  <node pkg="armor_rds_tutorial" type="control.py" name="control" ns="robot2" args="robot2" output="screen"/> 
+  <remap from="/robot1/armor_interface_srv" to="/armor_interface_srv"/>
+  <remap from="/robot2/armor_interface_srv" to="/armor_interface_srv"/>
+  
+  <node pkg="armor_rds_tutorial" type="house_monitor.py" name="house_monitor" output="screen"/> 
+  
+  <!-- start rviz -->
+  <include file="$(find armor_rds_tutorial)/launch/view_navigation.launch"/> 
+</launch>
